@@ -1,3 +1,4 @@
+import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,42 +17,62 @@ class MyApp extends StatelessWidget {
 }
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  HomePage({Key? key}) : super(key: key);
 
-  Stream<int> countStream() async* {
-    for (int i = 1; i <= 10; i++) {
-      await Future.delayed(Duration(seconds: 1));
-      yield i;
-    }
-  }
+  CounterCubit myCounter = CounterCubit();
 
   @override
   Widget build(BuildContext context) {
     print('Dibuild');
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Stream App'),
+        title: const Text('Cubit App'),
       ),
-      body: StreamBuilder(
-        stream: countStream(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(
-              child: Text(
-                '0',
-                style: TextStyle(fontSize: 50),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          StreamBuilder(
+            stream: myCounter.stream,
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return const Center(child: CircularProgressIndicator());
+              } else {
+                return Center(
+                  child: Text(
+                    snapshot.data.toString(),
+                    style: TextStyle(fontSize: 50),
+                  ),
+                );
+              }
+            },
+          ),
+          SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              IconButton(
+                onPressed: () => myCounter.removeData(),
+                icon: Icon(Icons.remove),
               ),
-            );
-          } else {
-            return Center(
-              child: Text(
-                snapshot.data.toString(),
-                style: TextStyle(fontSize: 50),
+              IconButton(
+                onPressed: () => myCounter.addData(),
+                icon: Icon(Icons.add),
               ),
-            );
-          }
-        },
+            ],
+          )
+        ],
       ),
     );
+  }
+}
+
+class CounterCubit extends Cubit<int> {
+  CounterCubit() : super(0);
+  void addData() {
+    emit(state + 1);
+  }
+
+  void removeData() {
+    emit(state - 1);
   }
 }
