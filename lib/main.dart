@@ -16,8 +16,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      onGenerateRoute: router.onRoute,
+    return BlocProvider(
+      create: (context) => Counter(),
+      child: MaterialApp(
+        home: HomePageUi(),
+        // onGenerateRoute: router.onRoute,
+      ),
     );
   }
 }
