@@ -1,3 +1,4 @@
+import 'package:bloc_state_management/page/home_provider.dart';
 import 'package:flutter/material.dart';
 
 import 'page/home.dart';
@@ -12,7 +13,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomePage(),
+      home: HomeProvider(),
+      // HomePage(),
     );
   }
 }
