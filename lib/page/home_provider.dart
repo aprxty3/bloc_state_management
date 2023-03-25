@@ -1,9 +1,9 @@
 import 'package:bloc_state_management/bloc/counter.dart';
+import 'package:bloc_state_management/page/widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeProvider extends StatelessWidget {
-  Counter myCounter = Counter();
+  final myCounter = Counter();
   HomeProvider({super.key});
 
   @override
@@ -23,7 +23,7 @@ class HomeProvider extends StatelessWidget {
                 borderRadius: BorderRadius.circular(15),
                 child: InkWell(
                   borderRadius: BorderRadius.circular(15),
-                  onTap: () {},
+                  onTap: () => myCounter.decrement(),
                   child: const SizedBox(
                     height: 100,
                     width: 70,
@@ -37,31 +37,13 @@ class HomeProvider extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
-                height: 100,
-                width: 200,
-                color: Colors.red,
-                child: Center(
-                  child: BlocBuilder(
-                    bloc: myCounter,
-                    builder: (context, state) {
-                      return Text(
-                        state.toString(),
-                        style: const TextStyle(
-                          fontSize: 50,
-                          color: Colors.white,
-                        ),
-                      );
-                    },
-                  ),
-                ),
-              ),
+              DataWidget(myCounter: myCounter),
               Material(
                 color: Colors.blue,
                 borderRadius: BorderRadius.circular(15),
                 child: InkWell(
                   borderRadius: BorderRadius.circular(15),
-                  onTap: () {},
+                  onTap: () => myCounter.increment(),
                   child: const SizedBox(
                     height: 100,
                     width: 70,
