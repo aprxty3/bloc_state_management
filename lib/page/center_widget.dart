@@ -4,11 +4,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../bloc/counter.dart';
 
 class CenterWidget extends StatelessWidget {
-  final Counter myCounter;
-  const CenterWidget({Key? key, required this.myCounter}) : super(key: key);
+  const CenterWidget({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var myCounter = BlocProvider.of<Counter>(context);
     return Center(
       child: BlocBuilder(
         bloc: myCounter,
