@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
 
-  CounterCubit myCounter = CounterCubit(initialData: 61);
+  CounterCubit myCounter = CounterCubit(initialData: 0);
 
   @override
   Widget build(BuildContext context) {
@@ -66,11 +66,25 @@ class HomePage extends StatelessWidget {
 class CounterCubit extends Cubit<int> {
   CounterCubit({this.initialData = 0}) : super(initialData);
   int initialData;
+
   void addData() {
     emit(state + 1);
   }
 
   void removeData() {
     emit(state - 1);
+  }
+
+  //Observer (memantau perubahan state dengan onChange, onError dan lainnya)
+  @override
+  void onChange(Change<int> change) {
+    super.onChange(change);
+    print(change);
+  }
+
+  @override
+  void onError(Object error, StackTrace stackTrace) {
+    super.onError(error, stackTrace);
+    print(error);
   }
 }
