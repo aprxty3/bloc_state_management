@@ -10,19 +10,20 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('BLOC Listener'),
+        title: Text('BLOC Consumer'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          BlocListener<Counter, int>(
+          BlocConsumer<Counter, int>(
             bloc: myCounter,
-            listenWhen: (previous, current) {
-              if (current % 2 == 1) {
-                return true;
-              } else {
-                return false;
-              }
+            builder: (context, state) {
+              return Center(
+                child: Text(
+                  state.toString(),
+                  style: TextStyle(fontSize: 50),
+                ),
+              );
             },
             listener: (context, state) {
               ScaffoldMessenger.of(context).showSnackBar(
@@ -34,18 +35,46 @@ class HomePage extends StatelessWidget {
                 ),
               );
             },
-            child: BlocBuilder<Counter, int>(
-              bloc: myCounter,
-              builder: (context, state) {
-                return Center(
-                  child: Text(
-                    state.toString(),
-                    style: TextStyle(fontSize: 50),
-                  ),
-                );
-              },
-            ),
+            listenWhen: (previous, current) {
+              if (current % 2 == 1) {
+                return true;
+              } else {
+                return false;
+              }
+            },
           ),
+
+          // BlocListener<Counter, int>(
+          //   bloc: myCounter,
+          // listenWhen: (previous, current) {
+          //   if (current % 2 == 1) {
+          //     return true;
+          //   } else {
+          //     return false;
+          //   }
+          // },
+          //   listener: (context, state) {
+          //     ScaffoldMessenger.of(context).showSnackBar(
+          //       SnackBar(
+          //         duration: Duration(seconds: 1),
+          //         content: Text(
+          //           'data ganjil',
+          //         ),
+          //       ),
+          //     );
+          //   },
+          //   child: BlocBuilder<Counter, int>(
+          //     bloc: myCounter,
+          //     builder: (context, state) {
+          //       return Center(
+          //         child: Text(
+          //           state.toString(),
+          //           style: TextStyle(fontSize: 50),
+          //         ),
+          //       );
+          //     },
+          //   ),
+          // ),
           // StreamBuilder(
           //   stream: myCounter.stream,
           //   initialData: myCounter.initData,
