@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../bloc/counter.dart';
+import '../other/other.dart';
 import 'biru.dart';
 
 class HomePageUi extends StatelessWidget {
@@ -14,6 +15,19 @@ class HomePageUi extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Dependency Injection'),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => BlocProvider.value(
+                value: counter,
+                child: const OtherPage(),
+              ),
+            ),
+          );
+        },
+        child: const Icon(Icons.forward),
       ),
       body: Center(
         child: Row(
