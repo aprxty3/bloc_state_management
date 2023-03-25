@@ -10,30 +10,42 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('BLOC BUILDER'),
+        title: Text('BLOC Listener'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          BlocBuilder<Counter, int>(
+          BlocListener<Counter, int>(
             bloc: myCounter,
-            buildWhen: (previous, current) {
-              if (current % 2 == 0) {
+            listenWhen: (previous, current) {
+              if (current % 2 == 1) {
                 return true;
               } else {
                 return false;
               }
             },
-            builder: (context, state) {
-              return Center(
-                child: Text(
-                  state.toString(),
-                  style: TextStyle(fontSize: 50),
+            listener: (context, state) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  duration: Duration(seconds: 1),
+                  content: Text(
+                    'data ganjil',
+                  ),
                 ),
               );
             },
+            child: BlocBuilder<Counter, int>(
+              bloc: myCounter,
+              builder: (context, state) {
+                return Center(
+                  child: Text(
+                    state.toString(),
+                    style: TextStyle(fontSize: 50),
+                  ),
+                );
+              },
+            ),
           ),
-
           // StreamBuilder(
           //   stream: myCounter.stream,
           //   initialData: myCounter.initData,
