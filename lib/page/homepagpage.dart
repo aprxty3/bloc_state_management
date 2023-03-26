@@ -31,7 +31,7 @@ class HomePagePage extends StatelessWidget {
             builder: (context, state) {
               print('Build Age');
               return Text(
-                'Nama : $state',
+                'Umur : $state',
                 style: TextStyle(fontSize: 32),
               );
             },
