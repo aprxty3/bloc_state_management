@@ -25,14 +25,50 @@ class NewHomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            BlocBuilder<CounterBloc, int>(
-              bloc: myCouter,
-              builder: (context, state) {
-                return Text(
-                  state.toString(),
-                  style: TextStyle(fontSize: 50),
-                );
-              },
+            MultiBlocListener(
+              listeners: [
+                BlocListener<ThemeBloc, bool>(
+                  listener: (context, state) =>
+                      ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      duration: Duration(seconds: 1),
+                      content: Text('haahahaha'),
+                    ),
+                  ),
+                  listenWhen: (previous, current) {
+                    if (current == false) {
+                      return true;
+                    } else {
+                      return false;
+                    }
+                  },
+                ),
+                BlocListener<CounterBloc, int>(
+                  listener: (context, state) =>
+                      ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      duration: Duration(seconds: 1),
+                      content: Text('wik wik'),
+                    ),
+                  ),
+                  listenWhen: (previous, current) {
+                    if (current % 2 == 0) {
+                      return true;
+                    } else {
+                      return false;
+                    }
+                  },
+                ),
+              ],
+              child: BlocBuilder<CounterBloc, int>(
+                bloc: myCouter,
+                builder: (context, state) {
+                  return Text(
+                    state.toString(),
+                    style: TextStyle(fontSize: 50),
+                  );
+                },
+              ),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
