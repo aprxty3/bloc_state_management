@@ -1,17 +1,16 @@
 import 'package:bloc_state_management/bloc/counter_bloc.dart';
+import 'package:bloc_state_management/page/apps.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'bloc/theme_bloc.dart';
-import 'page/new_home_page.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({super.key});
-  final ThemeBloc myTheme = ThemeBloc();
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,18 +20,10 @@ class MyApp extends StatelessWidget {
           create: (context) => CounterBloc(),
         ),
         BlocProvider<ThemeBloc>(
-          create: (context) => myTheme,
+          create: (context) => ThemeBloc(),
         ),
       ],
-      child: BlocBuilder<ThemeBloc, bool>(
-        bloc: myTheme,
-        builder: (context, state) {
-          return MaterialApp(
-            theme: state == true ? ThemeData.light() : ThemeData.dark(),
-            home: NewHomePage(),
-          );
-        },
-      ),
+      child: Apps(),
     );
 
     // BlocBuilder<ThemeBloc, bool>(
