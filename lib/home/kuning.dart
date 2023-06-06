@@ -12,7 +12,7 @@ class Kuning extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.all(20),
       color: Colors.amber,
-      child: Ijo(),
+      child: const Ijo(),
     );
   }
 }

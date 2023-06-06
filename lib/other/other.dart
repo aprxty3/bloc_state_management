@@ -11,7 +11,7 @@ class OtherPage extends StatelessWidget {
     var counter = context.read<Counter>();
     return Scaffold(
       appBar: AppBar(
-        title: Text('Other Page'),
+        title: const Text('Other Page'),
       ),
       body: Center(
         child: BlocBuilder(
@@ -19,7 +19,7 @@ class OtherPage extends StatelessWidget {
           builder: (context, state) {
             return Text(
               state.toString(),
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 50,
               ),
             );

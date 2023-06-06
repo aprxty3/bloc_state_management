@@ -13,7 +13,7 @@ class Biru extends StatelessWidget {
       width: 150,
       height: 150,
       color: Colors.blue,
-      child: Kuning(),
+      child: const Kuning(),
     );
   }
 }

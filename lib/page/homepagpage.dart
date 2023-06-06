@@ -11,7 +11,7 @@ class HomePagePage extends StatelessWidget {
     var userBloc = context.read<UserBloc>();
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home'),
+        title: const Text('Home'),
       ),
       body: ListView(
         padding: const EdgeInsets.all(20),
@@ -22,7 +22,7 @@ class HomePagePage extends StatelessWidget {
               print('Build Name');
               return Text(
                 'Nama : $state',
-                style: TextStyle(fontSize: 32),
+                style: const TextStyle(fontSize: 32),
               );
             },
           ),
@@ -32,7 +32,7 @@ class HomePagePage extends StatelessWidget {
               print('Build Age');
               return Text(
                 'Umur : $state',
-                style: TextStyle(fontSize: 32),
+                style: const TextStyle(fontSize: 32),
               );
             },
           ),
@@ -47,11 +47,11 @@ class HomePagePage extends StatelessWidget {
           // SizedBox(height: 20),
           TextField(
             onChanged: (value) => userBloc.changeName(value),
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               border: OutlineInputBorder(),
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -59,7 +59,7 @@ class HomePagePage extends StatelessWidget {
                 onPressed: () {
                   userBloc.changeAge(userBloc.state['age'] - 1);
                 },
-                icon: Icon(
+                icon: const Icon(
                   Icons.remove,
                   size: 32,
                 ),
@@ -68,7 +68,7 @@ class HomePagePage extends StatelessWidget {
                 onPressed: () {
                   userBloc.changeAge(userBloc.state['age'] + 1);
                 },
-                icon: Icon(
+                icon: const Icon(
                   Icons.add,
                   size: 32,
                 ),

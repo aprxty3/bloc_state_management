@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
                 return Center(
                   child: Text(
                     state.toString(),
-                    style: TextStyle(fontSize: 50),
+                    style: const TextStyle(fontSize: 50),
                   ),
                 );
               },
@@ -89,17 +89,17 @@ class HomePage extends StatelessWidget {
             // );
             //   },
             // ),
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 IconButton(
                   onPressed: () => myCounter.decrement(),
-                  icon: Icon(Icons.remove),
+                  icon: const Icon(Icons.remove),
                 ),
                 IconButton(
                   onPressed: () => myCounter.increment(),
-                  icon: Icon(Icons.add),
+                  icon: const Icon(Icons.add),
                 ),
               ],
             ),

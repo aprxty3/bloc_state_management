@@ -15,7 +15,7 @@ class Apps extends StatelessWidget {
       builder: (context, state) {
         return MaterialApp(
           theme: state == true ? ThemeData.light() : ThemeData.dark(),
-          home: NewHomePage(),
+          home: const NewHomePage(),
         );
       },
     );

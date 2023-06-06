@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:flutter/material.dart';
 
 class Counter extends Cubit<int> {
   Counter({this.initData = 0}) : super(0);

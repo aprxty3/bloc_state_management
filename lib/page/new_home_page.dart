@@ -16,10 +16,10 @@ class NewHomePage extends StatelessWidget {
         onPressed: () {
           myTheme.changeTheme();
         },
-        child: Icon(Icons.abc),
+        child: const Icon(Icons.abc),
       ),
       appBar: AppBar(
-        title: Text('Home'),
+        title: const Text('Home'),
       ),
       body: Center(
         child: Column(
@@ -65,7 +65,7 @@ class NewHomePage extends StatelessWidget {
                 builder: (context, state) {
                   return Text(
                     state.toString(),
-                    style: TextStyle(fontSize: 50),
+                    style: const TextStyle(fontSize: 50),
                   );
                 },
               ),
@@ -74,13 +74,13 @@ class NewHomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 IconButton(
-                  icon: Icon(Icons.remove),
+                  icon: const Icon(Icons.remove),
                   onPressed: () {
                     myCouter.remove();
                   },
                 ),
                 IconButton(
-                  icon: Icon(Icons.add),
+                  icon: const Icon(Icons.add),
                   onPressed: () {
                     myCouter.add();
                   },

@@ -15,21 +15,21 @@ class AppRoutes {
         return MaterialPageRoute(
           builder: (context) => BlocProvider.value(
             value: counter,
-            child: HomePageUi(),
+            child: const HomePageUi(),
           ),
         );
       case '/other':
         return MaterialPageRoute(
           builder: (context) => BlocProvider.value(
             value: counter,
-            child: OtherPage(),
+            child: const OtherPage(),
           ),
         );
       default:
         return MaterialPageRoute(
           builder: (context) => BlocProvider.value(
             value: counter,
-            child: NotFoundPage(),
+            child: const NotFoundPage(),
           ),
         );
     }

@@ -40,7 +40,7 @@ class HomeProvider extends StatelessWidget {
                   ),
                 ),
               ),
-              DataWidget(),
+              const DataWidget(),
               Material(
                 color: Colors.blue,
                 borderRadius: BorderRadius.circular(15),

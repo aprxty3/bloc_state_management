@@ -3,7 +3,7 @@ import 'package:bloc_state_management/page/homepagpage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: BlocProvider(
         create: (context) => UserBloc(),
-        child: HomePagePage(),
+        child: const HomePagePage(),
       ),
     );
   }

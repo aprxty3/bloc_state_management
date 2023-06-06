@@ -12,7 +12,7 @@ class Ijo extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.all(20),
       color: Colors.green,
-      child: CenterData(),
+      child: const CenterData(),
     );
   }
 }

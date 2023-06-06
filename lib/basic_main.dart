@@ -39,22 +39,22 @@ class HomePage extends StatelessWidget {
               return Center(
                 child: Text(
                   snapshot.data.toString(),
-                  style: TextStyle(fontSize: 50),
+                  style: const TextStyle(fontSize: 50),
                 ),
               );
             },
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               IconButton(
                 onPressed: () => myCounter.removeData(),
-                icon: Icon(Icons.remove),
+                icon: const Icon(Icons.remove),
               ),
               IconButton(
                 onPressed: () => myCounter.addData(),
-                icon: Icon(Icons.add),
+                icon: const Icon(Icons.add),
               ),
             ],
           )

@@ -18,7 +18,7 @@ class PagePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home'),
+        title: const Text('Home'),
       ),
       body: Center(
         child: Column(
@@ -30,7 +30,7 @@ class PagePage extends StatelessWidget {
                   context.select((UserBloc bloc) => bloc.state['name']);
               return Text(
                 'Nama: $nameUser',
-                style: TextStyle(fontSize: 50),
+                style: const TextStyle(fontSize: 50),
               );
             }),
             Builder(builder: (context) {
@@ -38,7 +38,7 @@ class PagePage extends StatelessWidget {
                   context.select((UserBloc bloc) => bloc.state['age']);
               return Text(
                 'Nama: $ageUser',
-                style: TextStyle(fontSize: 50),
+                style: const TextStyle(fontSize: 50),
               );
             }),
             // Builder(builder: (context) {
@@ -58,7 +58,7 @@ class PagePage extends StatelessWidget {
                         .read<UserBloc>()
                         .changeAge(context.read<UserBloc>().state['age'] - 1);
                   },
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.remove,
                     size: 32,
                   ),
@@ -69,7 +69,7 @@ class PagePage extends StatelessWidget {
                         .read<UserBloc>()
                         .changeAge(context.read<UserBloc>().state['age'] + 1);
                   },
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.add,
                     size: 32,
                   ),

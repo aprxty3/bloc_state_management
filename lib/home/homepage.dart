@@ -46,7 +46,7 @@ class HomePageUi extends StatelessWidget {
                 ),
               ),
             ),
-            Biru(),
+            const Biru(),
             Material(
               color: Colors.red,
               child: InkWell(

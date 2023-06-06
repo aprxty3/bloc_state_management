@@ -15,7 +15,7 @@ class WidgetData extends StatelessWidget {
       builder: (context, state) {
         return Text(
           state.toString(),
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 50,
             color: Colors.white,
           ),
