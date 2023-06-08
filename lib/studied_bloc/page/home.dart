@@ -1,6 +1,7 @@
-import 'package:bloc_state_management/bloc/counter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../bloc/counter.dart';
 
 class HomePage extends StatelessWidget {
   Counter myCounter = Counter();

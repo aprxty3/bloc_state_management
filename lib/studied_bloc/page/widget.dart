@@ -1,6 +1,6 @@
-import 'package:bloc_state_management/page/center_widget.dart';
 import 'package:flutter/material.dart';
 
+import 'center_widget.dart';
 
 class DataWidget extends StatelessWidget {
   const DataWidget({super.key});

@@ -1,10 +1,10 @@
-import 'package:bloc_state_management/404/404.dart';
-import 'package:bloc_state_management/other/other.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../404/404.dart';
 import '../bloc/counter.dart';
 import '../home/homepage.dart';
+import '../other/other.dart';
 
 class AppRoutes {
   final Counter counter = Counter();

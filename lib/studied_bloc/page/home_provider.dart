@@ -1,7 +1,8 @@
-import 'package:bloc_state_management/bloc/counter.dart';
-import 'package:bloc_state_management/page/widget.dart';
+import 'package:bloc_state_management/studied_bloc/page/widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../bloc/counter.dart';
 
 class HomeProvider extends StatelessWidget {
   const HomeProvider({super.key});

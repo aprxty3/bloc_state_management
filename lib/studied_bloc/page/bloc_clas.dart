@@ -1,8 +1,9 @@
-import 'package:bloc_state_management/bloc/counter/counter_event.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../bloc/counter/counter_bloc.dart';
+import '../bloc/counter/counter_event.dart';
 
 class BlocClass extends StatelessWidget {
   const BlocClass({super.key});

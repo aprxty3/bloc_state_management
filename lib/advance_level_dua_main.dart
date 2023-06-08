@@ -1,5 +1,5 @@
-import 'package:bloc_state_management/bloc/user_bloc.dart';
-import 'package:bloc_state_management/page/homepagpage.dart';
+import 'package:bloc_state_management/studied_bloc/bloc/user_bloc.dart';
+import 'package:bloc_state_management/studied_bloc/page/homepagpage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
