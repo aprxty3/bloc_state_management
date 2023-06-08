@@ -12,7 +12,7 @@ class App extends StatelessWidget {
       BlocProvider(
         create: (context) => UserBloc(),
       )
-    ], child: AppView());
+    ], child: const AppView());
   }
 }
 
@@ -21,7 +21,7 @@ class AppView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: HomePageScreen(),
     );
   }

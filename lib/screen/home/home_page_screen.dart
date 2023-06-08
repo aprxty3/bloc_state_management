@@ -1,3 +1,4 @@
+import 'package:bloc_state_management/screen/add/add_user.dart';
 import 'package:flutter/material.dart';
 
 class HomePageScreen extends StatelessWidget {
@@ -9,10 +10,32 @@ class HomePageScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('All User'),
       ),
-      body: Container(
-        child: const Center(
-          child: Text('HomePageScreen'),
-        ),
+      body: ListView.builder(
+        itemCount: 4,
+        itemBuilder: (context, index) {
+          return ListTile(
+            leading: CircleAvatar(
+              child: Text('$index'),
+            ),
+            title: Text('Nama User $index'),
+            subtitle: Text('Umur User $index'),
+            trailing: IconButton(
+              icon: const Icon(Icons.delete),
+              onPressed: () {},
+            ),
+          );
+        },
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const AddUserScreen(),
+            ),
+          );
+        },
+        child: const Icon(Icons.add),
       ),
     );
   }
