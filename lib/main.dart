@@ -1,3 +1,4 @@
+import 'package:bloc_state_management/page/bloc_clas.dart';
 import 'package:bloc_state_management/page/enum_class.dart';
 import 'package:bloc_state_management/page/observer_bloc.dart';
 import 'package:bloc_state_management/page/pagepage.dart';
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: ObserverBloc(),
+      home: BlocClass(),
     );
   }
 }

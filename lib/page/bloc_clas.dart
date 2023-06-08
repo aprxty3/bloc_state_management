@@ -1,16 +1,18 @@
-import 'package:bloc_state_management/bloc/counter/counter_bloc.dart';
+import 'package:bloc_state_management/bloc/counter/counter_event.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class EnumClass extends StatelessWidget {
-  const EnumClass({super.key});
+import '../bloc/counter/counter_bloc.dart';
+
+class BlocClass extends StatelessWidget {
+  const BlocClass({super.key});
 
   @override
   Widget build(BuildContext context) {
     final CounterBloc counterB = CounterBloc();
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Counter Apps'),
+        title: Text('BLoC Class'),
       ),
       body: Center(
         child: Column(
@@ -33,7 +35,7 @@ class EnumClass extends StatelessWidget {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    // counterB.add(CounterEvent.increment);
+                    counterB.add(IncrementCounter());
                   },
                   child: const Text('Increment'),
                 ),
@@ -42,7 +44,7 @@ class EnumClass extends StatelessWidget {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    // counterB.add(CounterEvent.decrement);
+                    counterB.add(DecrementCounter());
                   },
                   child: const Text('Decrement'),
                 ),
