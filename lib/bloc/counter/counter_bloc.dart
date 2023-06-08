@@ -23,10 +23,10 @@ class CounterBloc extends Bloc<CounterEvent, int> {
   CounterBloc() : super(0) {
     on<IncrementCounter>(
       (event, emit) {
-        emit(state + 1);
+        emit((state + 1) * event.value);
       },
     );
-    on<DecrementCounter>((event, emit) => emit(state - 1));
+    on<DecrementCounter>((event, emit) => emit((state - 1) * event.value));
   }
 
   @override

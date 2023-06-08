@@ -10,9 +10,10 @@ class BlocClass extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final CounterBloc counterB = CounterBloc();
+    int value = 10;
     return Scaffold(
       appBar: AppBar(
-        title: Text('BLoC Class'),
+        title: const Text('BLoC Class'),
       ),
       body: Center(
         child: Column(
@@ -23,7 +24,7 @@ class BlocClass extends StatelessWidget {
               builder: (context, state) {
                 return Text(
                   '$state',
-                  style: TextStyle(fontSize: 40),
+                  style: const TextStyle(fontSize: 40),
                 );
               },
             ),
@@ -35,7 +36,7 @@ class BlocClass extends StatelessWidget {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    counterB.add(IncrementCounter());
+                    counterB.add(IncrementCounter(value));
                   },
                   child: const Text('Increment'),
                 ),
@@ -44,7 +45,7 @@ class BlocClass extends StatelessWidget {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    counterB.add(DecrementCounter());
+                    counterB.add(DecrementCounter(value));
                   },
                   child: const Text('Decrement'),
                 ),
