@@ -1,4 +1,5 @@
 import 'package:bloc_state_management/screen/add/add_user.dart';
+import 'package:bloc_state_management/screen/edit_user/edit_user.dart';
 import 'package:flutter/material.dart';
 
 class HomePageScreen extends StatelessWidget {
@@ -14,6 +15,14 @@ class HomePageScreen extends StatelessWidget {
         itemCount: 4,
         itemBuilder: (context, index) {
           return ListTile(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const EditUserScreen(),
+                ),
+              );
+            },
             leading: CircleAvatar(
               child: Text('$index'),
             ),
