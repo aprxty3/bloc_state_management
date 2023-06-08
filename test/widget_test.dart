@@ -1,29 +1,19 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
-import 'package:bloc_state_management/main.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
+import 'package:equatable/equatable.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  Orang orang1 = Orang('Rizal', 20);
+  Orang orang2 = Orang('Riza', 20);
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+  print(orang1 == orang2);
+  print(orang1.toString());
+  print(orang2.toString());
+}
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+class Orang extends Equatable {
+  String name;
+  int umur;
+  Orang(this.name, this.umur);
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
-  });
+  @override
+  List<Object> get props => [name, umur];
 }
