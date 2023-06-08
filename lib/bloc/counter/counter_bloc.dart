@@ -19,35 +19,35 @@ class CounterCubit extends Cubit<int> {
   }
 }
 
-// class CounterBloc extends Bloc<CounterEvent, int> {
-//   CounterBloc() : super(0) {
-//     on<CounterEvent>(
-//       (event, emit) {
-//         switch (event) {
-//           case CounterEvent.increment:
-//             emit(state + 1);
-//             break;
-//           case CounterEvent.decrement:
-//             emit(state - 1);
-//             break;
-//         }
-//       },
-//     );
-//   }
+class CounterBloc extends Bloc<CounterEvent, int> {
+  CounterBloc() : super(0) {
+    on<CounterEvent>(
+      (event, emit) {
+        switch (event) {
+          case CounterEvent.increment:
+            emit(state + 1);
+            break;
+          case CounterEvent.decrement:
+            emit(state - 1);
+            break;
+        }
+      },
+    );
+  }
 
-//   @override
-//   void onChange(change) {
-//     print(change);
-//   }
+  @override
+  void onChange(change) {
+    print(change);
+  }
 
-//   @override
-//   void onError(error, trace) {
-//     print(error);
-//     print(trace);
-//   }
+  @override
+  void onError(error, trace) {
+    print(error);
+    print(trace);
+  }
 
-//   @override
-//   void onTransition(transition) {
-//     print(transition);
-//   }
-// }
+  @override
+  void onTransition(transition) {
+    print(transition);
+  }
+}
