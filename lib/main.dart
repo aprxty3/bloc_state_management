@@ -6,8 +6,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'bloc/user_bloc.dart';
+import 'page/my_observer.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  Bloc.observer = MyObserver();
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
