@@ -29,5 +29,18 @@ class UserBloc extends Bloc<UserEvent, UserState> {
         }
       },
     );
+
+    on<EditUserEvent>((event, emit) {
+      try {
+        emit(UserLoading(state.allUser));
+        UserModel selectedUser =
+            state.allUser.where((element) => element.id == event.user.id).first;
+        selectedUser.name = event.user.name;
+        selectedUser.age = event.user.age;
+        emit(UserFinish(state.allUser));
+      } catch (e) {
+        emit(UserError(state.allUser));
+      }
+    });
   }
 }

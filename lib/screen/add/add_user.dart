@@ -13,6 +13,7 @@ class AddUserScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     UserBloc userBloc = context.read<UserBloc>();
     return Scaffold(
       appBar: AppBar(

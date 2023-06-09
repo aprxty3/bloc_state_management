@@ -32,7 +32,7 @@ class HomePageScreen extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const EditUserScreen(),
+                      builder: (context) => EditUserScreen(user),
                     ),
                   );
                 },
