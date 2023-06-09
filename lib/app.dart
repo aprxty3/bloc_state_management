@@ -9,9 +9,8 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(providers: [
-      BlocProvider(
-        create: (context) => UserBloc(),
-      )
+      BlocProvider(create: (context) => UserBloc()),
+      BlocProvider(create: (context) => RandomBloc()),
     ], child: const AppView());
   }
 }
@@ -24,5 +23,5 @@ class AppView extends StatelessWidget {
     return const MaterialApp(
       home: HomePageScreen(),
     );
-  }
+  }    
 }
