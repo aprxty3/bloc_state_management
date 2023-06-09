@@ -12,3 +12,15 @@ abstract class UserState extends Equatable {
 class UserInitial extends UserState {
   UserInitial(super.allUser);
 }
+
+class UserLoading extends UserState {
+  UserLoading(super.allUser);
+}
+
+class UserFinish extends UserState {
+  UserFinish(super.allUser);
+}
+
+class UserError extends UserState {
+  UserError(super.allUser);
+}
