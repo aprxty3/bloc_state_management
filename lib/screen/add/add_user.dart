@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 import '../../bloc/bloc_export.dart';
-import '../../models/user_model.dart';
+import '../../data/models/user_model.dart';
 
 class AddUserScreen extends StatelessWidget {
   AddUserScreen({super.key});

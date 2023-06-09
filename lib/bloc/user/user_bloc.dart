@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:bloc_state_management/models/user_model.dart';
+import 'package:bloc_state_management/data/models/user_model.dart';
 import 'package:equatable/equatable.dart';
 
 part 'user_event.dart';

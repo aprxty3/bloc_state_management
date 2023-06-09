@@ -1,4 +1,4 @@
-import 'package:bloc_state_management/models/user_model.dart';
+import 'package:bloc_state_management/data/models/user_model.dart';
 import 'package:bloc_state_management/screen/add/add_user.dart';
 import 'package:bloc_state_management/screen/edit_user/edit_user.dart';
 import 'package:flutter/material.dart';
