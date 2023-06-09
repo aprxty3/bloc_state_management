@@ -43,7 +43,9 @@ class HomePageScreen extends StatelessWidget {
                 subtitle: Text('${user.age} Tahun'),
                 trailing: IconButton(
                   icon: const Icon(Icons.delete),
-                  onPressed: () {},
+                  onPressed: () {
+                    userBloc.add(DeleteUserEvent(user));
+                  },
                 ),
               );
             },
