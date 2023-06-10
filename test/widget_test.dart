@@ -1,19 +1,10 @@
-import 'package:equatable/equatable.dart';
+import 'package:bloc_state_management/data/provider/masakan_provider.dart';
+import 'package:bloc_state_management/data/provider/user_provider.dart';
 
-void main() {
-  Orang orang1 = Orang('Rizal', 20);
-  Orang orang2 = Orang('Riza', 20);
+void main() async {
+  UserProvider userProvider = UserProvider();
+  MasakanProvider masakanProvider = MasakanProvider();
 
-  print(orang1 == orang2);
-  print(orang1.toString());
-  print(orang2.toString());
-}
-
-class Orang extends Equatable {
-  String name;
-  int umur;
-  Orang(this.name, this.umur);
-
-  @override
-  List<Object> get props => [name, umur];
+  print(await userProvider.getDataUser());
+  print(await masakanProvider.getDataMasakan());
 }
