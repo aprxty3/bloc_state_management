@@ -8,3 +8,4 @@ void main() {
   Bloc.observer = MyObserver();
   runApp(App());
 }
+ 
